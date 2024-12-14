@@ -1,1 +1,253 @@
-<h1>asdasd</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SceneX</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">SceneX: Procedural Controllable Large-scale Scene Generation via Large-language Models</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="mailto:zhoumengqi2022@ia.ac.cn">Mengqi Zhou</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a>Jun Hou</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a>Chuanchen Luo</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="mailto:yuxiwang93@gmail.com">Yuxi Wang</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="mailto:zhaoxiang.zhang@ia.ac.cn">Zhaoxiang Zhang</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="mailto:jrpeng4ever@126.com">Junran Peng</a><sup>1,2</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Institute of Automation, Chinese Academy of Sciences,</span>
+            <span class="author-block"><sup>2</sup>Centre for Artificial Intelligence and Robotics, Hong Kong Institute of Science & Innovation, Chinese Academy of Sciences</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2403.15698"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2403.15698"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/SceneX-LAB/SceneX-LAB"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./video/canyon.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./video/SceneX_river_demo.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="./video/SceneX_forest_demo.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./video/SceneX_snow_demo.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+<div class="hero-body">
+  <div class="container">
+    <div id="results-carousel" class="carousel results-carousel">
+      <div class="item item-steve">
+        <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+          <source src="./video/SceneX_1_demo.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="item item-chair-tp">
+        <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+          <source src="./video/SceneX_3_demo(1).mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="item item-shiba">
+        <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+          <source src="./video/SceneX_2_demo.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="item item-fullbody">
+        <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+          <source src="./video/SceneX_4_demo(1).mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Due to its great application potential, large-scale scene generation has drawn extensive attention in academia and industry.
+            Recent research employs powerful generative models to create desired scenes and achieves promising results.
+            However, most of these methods represent the scene using 3D primitives (e.g. point cloud or radiance field) incompatible with the industrial pipeline, which 
+            leads to a substantial gap between academic research and industrial deployment.
+            Procedural Controllable Generation (PCG) is an efficient technique for creating scalable and high-quality assets, but it is unfriendly for ordinary users as it demands profound domain expertise. To address these issues, we resort to using the large language model (LLM) to drive the procedural modeling.
+            In this paper, we introduce a large-scale scene generation framework, SceneX, which can automatically produce high-quality procedural models according to designers' textual descriptions.Specifically, the proposed method comprises two components, PCGBench and PCGPlanner. The former encompasses an extensive collection of accessible procedural assets and thousands of hand-craft API documents. The latter aims to generate executable actions for Blender to produce controllable and precise 3D assets guided by the user's instructions. Our SceneX can generate a city spanning 2.5 km * 2.5 km with delicate layout and geometric structures, drastically reducing the time cost from several weeks for professional PCG engineers to just a few hours for an ordinary user. Extensive experiments demonstrated the capability of our method in controllable large-scale scene generation and editing, including asset placement and season translation.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Tree generate demo</h2>
+        <div class="publication-video">
+          <iframe src="./video/SceneX_tree_demo.mp4"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 mt-5">The proposed SceneX can create large-scale 3D natural scenes or unbounded cities automatically according to user instructions.</h2>
+        <img src="./image/teaser (1)_00.jpg" alt="The proposed SceneX can create large-scale 3D natural scenes or unbounded cities automatically according to user instructions. The generated models are characterized by delicate geometric structures, realistic material textures, and natural lighting, allowing for seamless deployment in the industrial pipeline." height="100%">
+        <p class="content has-text-justified">
+          The generated models are characterized by delicate geometric structures, realistic material textures, and natural lighting, allowing for seamless deployment in the industrial pipeline.
+        </p>
+      </div>
+    </div>
+    <!--/ Image section 1. -->
+
+    <!-- Image section 2. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 mt-5">The PCG Planner framework</h2>
+        <img src="./image/SceneX (4)_00.jpg" alt="The proposed SceneX can create large-scale 3D natural scenes or unbounded cities automatically according to user instructions. The generated models are characterized by delicate geometric structures, realistic material textures, and natural lighting, allowing for seamless deployment in the industrial pipeline." height="100%">
+        <p class="content has-text-justified">
+          The PCG Planner framework comprises three essential components: the task planner, asset retrieval, and action execution. This framework empowers LLMs with the capabilities for task planning in complex scenarios, utilizing multiple API actions, and facilitating large-scale scene generation.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Citation</h2>
+    <pre><code>@article{,
+  author = {Mengqi Zhou and Jun Hou and Chuanchen Luo and Yuxi Wang and Zhaoxiang Zhang and Junran Peng},
+  title  = {SceneX: Procedural Controllable Large-scale Scene Generation via Large-language Models},
+  journal = {arXiv preprint arXiv:2403.15698},
+  year = {2024},
+}</code></pre>
+  </div>
+</section>
+
+
+</body>
+</html>
